@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Home Page</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<div class="banner">
+  <div class="navbar">
+    <ul>
+      <li><a href="aboutus.html">About Us</a></li>
+      <li><a href="information.html">Information</a></li>
+      <li><a href="index.html">Home</a></li>
+    </ul>
+  </div>
+    <div class="content">
+      <h1>Welcome To Instaella!</h1>
+      <p class= "Firstp">We are Glad that you are here!&#128512;<br></br> Click on <b>Sign In</b> if you already have an account. <br> Click on <b>Sign Up</b> if you are a new user! 	</p>
+
+      <div>
+<form  action = "/" method = 'POST'>
+
+<input class = "buttons" type="submit" name="action1" value="sign up" >
+
+<input class = "buttons" type="submit" name="action2" value="sign in">
+
+</form>
+
+    </div>
+    
+  </div>
+  </div>
+
+</body>
+</html>
