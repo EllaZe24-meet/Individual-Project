@@ -1,12 +1,24 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title></title>
+<title>Post Something</title>
+<link rel="stylesheet" href="/static/style.css">
 </head>
 <body>
-<form action = "/post_something"  method = "POST">
-<input type="text" name="post" placeholder="write something...">
-<input type="submit" value="Submit">
-</form>
+<div class="all_sign_in_page">
+<div class = "half_sign_in_page">
+<H1>Hello!</H1>
+<p>Please write your post:</p>
+</div>
+<form action="/post_something" method="POST">
+    <br> <input type="text" name="post" placeholder="write something...">
+    <input class = "submitbtn" type="submit" name= "mypost" value="See your posts">
+</form> 
+<a href="/all_posts">    <button class = "submitbtn" type="submit" name= "allpost" value="see all posts">See all posts</button>
+</a>
+ <a href="/">    <button class = "submitbtn" type="submit" name= "goback" value="go back">Go back</button> </a>
+
+</div>
+
 </body>
 </html>

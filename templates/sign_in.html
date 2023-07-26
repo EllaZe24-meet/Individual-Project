@@ -2,15 +2,20 @@
 <html>
 <head>
 <title>Sign In Page</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-	
+<div class="all_sign_in_page">
+<div class = "half_sign_in_page">
+<H1>Sign In Page</H1>
+<p>Please enter your email and password:</p>
+</div>
 <form action="/sign_in" method="POST">
     <br> <input type="text" name="email" placeholder="Email">
     <input type="text" name="password" placeholder="password">
-    <input type="submit" value="Submit">
+    <input class = "submitbtn" type="submit" value="Submit">
 </form> 
-
+</div>
 
 </body>
 </html>

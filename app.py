@@ -5,8 +5,6 @@ import pyrebase
 app = Flask(__name__, template_folder='templates', static_folder='static')
 app.config['SECRET_KEY'] = 'super-secret-key'
 
-
-
 #Code goes below here
 const_firebaseConfig = {
   "apiKey": "AIzaSyC8EgAa3Z_GxBQk-2scxGsW_xvxpMoER5I",
@@ -31,8 +29,8 @@ def home_page():
 			return redirect(url_for('sign_up'))
 		elif request.form.get('action2') == 'sign in':
 			return redirect(url_for('sign_in'))
-	else:
-		return render_template("home_page.html")
+
+	return render_template("home_page.html")
 
 
 
@@ -82,8 +80,8 @@ def post_something():
 			post = request.form['post']
 			update_posts = {"post" : post}
 			UID = login_session['user']['localId']
-			db.child("Users").child(UID).child("posts").push(update_posts)			
-			return redirect(url_for('all_post'))
+			db.child("Users").child(UID).child("posts").push(update_posts)
+			return redirect(url_for('my_posts'))
 		except:
 			return render_template("post_something.html")
 	else:
@@ -91,10 +89,25 @@ def post_something():
 
 @app.route("/all_posts"  , methods = ['GET', 'POST'])
 def all_post():
-	UID = login_session['user']['localId']
-	user = db.child("Users").child(UID).child("posts").get().val()
-	return render_template("all_posts.html", user = user) 
+	user_post = db.child("Users").get().val()
+	list_posts = []
+	for uid in user_post:
+		if "email" in user_post[uid]:
+			email = user_post[uid]["email"]
+		else:
+			email = "no email"
+		if "posts" in user_post[uid]:
+			posts = user_post[uid]["posts"]
+			for post in posts:
+				list_posts.append((posts[post]["post"], email))
+	return render_template("all_posts.html", list_posts = list_posts) 
 
+#the uid of the person that wrotr this posts
+@app.route("/my_posts"  , methods = ['GET', 'POST'])
+def my_posts():
+	UID = login_session['user']['localId']
+	user_post = db.child("Users").child(UID).child("posts").get().val()
+	return render_template("my_post.html", user = user_post) 
 #Code goes above here
 
 if __name__ == '__main__':

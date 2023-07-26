@@ -1,0 +1,18 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>your posts page</title>
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<div class = "allsom">
+<h1 class = "hel">Your Posts:</h1>
+{%for i in user%}
+{{user[i]["post"]}}
+<br>
+{%endfor%}
+
+</div>
+</body>
+</html>

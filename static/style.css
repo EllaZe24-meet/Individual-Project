@@ -86,3 +86,117 @@ html, body {
 .buttons:hover {
   background-color: #BDB5D5   ; /* Darker shade of purple on hover */
 }
+
+/* Reset default margin and padding */
+body, h1, p, form, input {
+  margin: 0;
+  padding: 0;
+}
+
+/* Center the content on the page */
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #E1BEE7; /* Light purple background color */
+}
+
+/* Style the sign-in box */
+.all_sign_in_page {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Add a subtle shadow effect */
+}
+
+/* Center the content within the sign-in box */
+.half_sign_in_page {
+  text-align: center;
+}
+
+/* Style the sign-in form */
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
+/* Style the input fields and buttons */
+input[type="text"],
+input[type="password"] {
+  width: 300px;
+  padding: 10px;
+  margin: 5px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+.submitbtn {
+  width: 150px;
+  padding: 10px;
+  margin-top: 10px;
+  background-color: #6A1B9A; /* Dark purple background color */
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  margin: 10px;
+  border-radius: 10px; /* Add rounded corners to buttons */
+  transition: background-color 0.5s; /* Add a smooth transition on hover */
+  font-size: 20px; /* Increase font size for buttons */
+}
+
+.submitbtn:hover {
+  background-color: #BDB5D5   ; /* Darker shade of purple on hover */
+}
+
+/* Reset default margin and padding */
+body, h1, p {
+  margin: 0;
+  padding: 0;
+}
+
+/* Center the content on the page */
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #E1BEE7; /* Light purple background color */
+}
+
+/* Style the container for all posts */
+.container {
+  max-width: 600px;
+  margin: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+}
+
+/* Style the post header (email) */
+.post-header {
+  font-size: 18px;
+  font-weight: bold;
+  color: #6A1B9A; /* Dark purple color for email */
+}
+
+/* Style the post content */
+.post-content {
+  font-size: 16px;
+  color: #000; /* Black color for post content */
+  margin-top: 10px;
+}
+
+/* Add a separator between posts */
+.post-separator {
+  border-top: 1px solid #ccc;
+  margin: 10px 0;
+}
+
+/* Add spacing between posts */
+.post {
+  margin-bottom: 20px;
+}

@@ -2,11 +2,16 @@
 <html>
 <head>
 <title>posts page</title>
+<link rel="stylesheet" href="/static/style.css">
 </head>
 <body>
-<h1>gygygy</h1>
-{%for i in user%}
-{{user[i]["post"]}}
+<div class = "allsom">
+<h1 class = "hel">  All Posts:</h1>
+{%for post,email in list_posts%}
+{{email}}
+{{post}}
+<br>
 {%endfor%}
+</div>
 </body>
 </html>
